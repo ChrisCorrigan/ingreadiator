@@ -1,0 +1,30 @@
+{
+  "name": "ingreadiator",
+  "version": "1.0.0",
+  "description": "<h1>PayByPhone's Frontend Code Test</h1> <p>'Ingreadiator' version submission by Chris Corrigan.</p>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run scss; npm run build",
+    "build": "babel src -d lib",
+    "scss": "node-sass src/css/styling-framework.scss lib/styling-framework.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paybyphone/frontend-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paybyphone/frontend-test/issues"
+  },
+  "homepage": "https://github.com/paybyphone/frontend-test#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {}
+}
