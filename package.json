@@ -2,11 +2,13 @@
   "name": "ingreadiator",
   "version": "1.0.0",
   "description": "<h1>PayByPhone's Frontend Code Test</h1> <p>'Ingreadiator' version submission by Chris Corrigan.</p>",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "npm run scss; npm run build",
-    "build": "babel src -d lib",
-    "scss": "node-sass src/css/styling-framework.scss lib/styling-framework.css",
+    "start": "npm run scss; npm run build; copyFiles; http-server -o",
+    "dev": "npm run scss; npm run build; copyFiles",
+    "build": "babel src -d public",
+    "scss": "node-sass src/css/styling-framework.scss public/styling-framework.css",
+    "copyFiles": "copyfiles src/index.html public --flat",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +26,8 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "copyfiles": "^2.1.0",
+    "http-server": "^0.11.1",
     "node-sass": "^4.11.0"
   },
   "dependencies": {}
