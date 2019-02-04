@@ -1,0 +1,20 @@
+@import "vendor/rem";
+
+@mixin flex-centerize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.u- {
+    &hide, &hidden {
+        display: none !important;
+    }
+}
+.hide, .hidden {
+    display: none !important;
+}
+
+.u-selected, .selected {
+    background-color: $color-brand;
+}
