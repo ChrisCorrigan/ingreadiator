@@ -16,12 +16,12 @@ const fetchData = async(dataLocation) => {
 const init = (recipes) => {
     // initialize recipe list component
     renderRecipes(recipes);
-
 }
 const addEventListenerToNewRecipe = (id, ingredients) => {
     let newRecipeElm = document.querySelector('[data-recipe-id="'+id+'"]');
+    let elmClickArea = newRecipeElm.querySelector('.recipe__click-area');
 
-    newRecipeElm.addEventListener('click', () => {
+    elmClickArea.addEventListener('click', () => {
         if (newRecipeElm.classList.contains('selected')) {
             renderIngredients(ingredients, 'remove');
             newRecipeElm.classList.remove('selected');
@@ -29,7 +29,23 @@ const addEventListenerToNewRecipe = (id, ingredients) => {
             renderIngredients(ingredients, 'add');
             newRecipeElm.classList.add('selected');
         }
+    }, false);
+
+    // set event listener to show/hide ingredient list
+    let expandTrigger = newRecipeElm.querySelector('.recipe__expand');
+    let collapseTrigger = newRecipeElm.querySelector('.recipe__collapse');
+    let list = newRecipeElm.querySelector('.recipe__ingredients');
+    expandTrigger.addEventListener('click', () => {
+        expandTrigger.classList.add('hidden');
+        collapseTrigger.classList.remove('hidden');
+        list.classList.remove('hidden');
     });
+    collapseTrigger.addEventListener('click', () => {
+        expandTrigger.classList.remove('hidden');
+        collapseTrigger.classList.add('hidden');
+        list.classList.add('hidden');
+    });
+
 }
 const renderRecipes = (recipes) => {
     // create recipe cards
@@ -38,17 +54,21 @@ const renderRecipes = (recipes) => {
         let ingredients = recipe['ingredients'];
         let recipeElm = `
             <article class="recipe" data-recipe-id="${recipeId}">
-                <h2 class="recipe__name">${recipe['name']}</h2>
-                <p class="recipe__cuisine"><span>${recipe['type']}</span> cuisine</p>
-                <div class="recipe__ingredients hidden">
-                    ${ingredients.map(ingredient => 
-                        `<div class="recipe__ingredient">${ingredient}</div>`
-                    ).join('')}
+                <div class="recipe__click-area">
+                    <h2 class="recipe__name">${recipe['name']}</h2>
+                    <p class="recipe__cuisine"><span>${recipe['type']}</span> cuisine</p>
+                    <div class="recipe__ingredients hidden">
+                        ${ingredients.map(ingredient => 
+                            `<div class="recipe__ingredient">${ingredient}</div>`
+                        ).join('')}
+                    </div>
                 </div>
+                <div class="arrow-right recipe__expand"></div>
+                <div class="arrow-down recipe__collapse hidden"></div>
             </article>
         `;
         recipesElm.insertAdjacentHTML('beforeend', recipeElm);
-        // set callback on recipie to add to remove to ingredients shopping list
+        // set callback on recipe to add to remove to ingredients shopping list
         // since recipeElm is not a dom element yet, get the new dom element that was 
         // just inserted by its ID and add the event listener to it. Also do it outside
         // the loop so we create closure around the current versions of variables

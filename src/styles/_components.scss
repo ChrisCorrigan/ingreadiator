@@ -18,7 +18,7 @@
     &__cuisine {
         position: absolute;
         top: rem(10px);
-        right: rem(10px);
+        right: rem(30px);
         margin: 0;
         padding: rem(2px 10px 1px 10px);
         background-color: $color-accent-muted;
@@ -32,9 +32,14 @@
     }
     &__ingredient {
         float: left;
-        margin: rem(0 22px 8px 0);
+        margin: rem(14px 22px 8px 0);
         font-family: $typeface-writing;
         line-height: 1.4;
+    }
+    &__expand, &__collapse {
+        position: absolute;
+        top: rem(16px);
+        right: rem(10px);
     }
 }
 .ingredients {
