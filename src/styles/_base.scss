@@ -15,27 +15,29 @@ a {
 p, .p {
     margin-top: rem(12px);
     font-size: rem(14px);
+    font-family: $typeface-writing;
 }
 h1, .h1 {
     margin-bottom: 8px;
-    font-size: rem(30px);
+    font-size: rem(40px);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    font-family: $typeface-titles;
 }
-h2, h3, h4, h5,
-.h2, .h3, .h4, .h5 {
+h2, h3, h4,
+.h2, .h3, .h4 {
     margin-top: rem(20px);
-    font-size: rem(24px);
+    font-size: rem(20px);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    font-family: $typeface-headings;
+    font-weight: 500;
 }
 h3, .h3 {
-    font-size: 20px;
-}
-h4, .h4 {
-    font-size: 18px;
-}
-h5, .h5 {
     font-size: 16px;
 }
+h4, .h4 {
+    font-size: 14px;
+}
+
 

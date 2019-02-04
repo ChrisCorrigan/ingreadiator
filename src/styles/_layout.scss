@@ -1,0 +1,24 @@
+.page {
+    height: 100vh;
+}
+
+.header {
+    padding: rem(18px 20px);
+    background-color: $color-accent;
+    text-align: center;
+    box-shadow: inset 0px 0px 25px rgba(0,0,0,0.2);
+    &__title {
+        text-transform: uppercase;
+        color: $color-brand;
+        margin: 0;
+        line-height: normal;
+    }
+    &__slogan {
+        font-family: $typeface-headings;
+        color: $color-peaceful;
+        font-size: rem(20px);
+        margin: 0;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
