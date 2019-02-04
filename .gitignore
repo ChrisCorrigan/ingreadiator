@@ -1,5 +1,6 @@
 # app settings
 .env
+public
 
 # IDE's
 .idea
