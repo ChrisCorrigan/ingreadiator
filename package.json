@@ -1,7 +1,7 @@
 {
   "name": "ingreadiator",
   "version": "1.0.0",
-  "description": "<h1>PayByPhone Frontend Code Test</h1> <p>Ingreadiator version submission by Chris Corrigan.</p>",
+  "description": "<h1>Frontend code exercise/test</h1> <p>Ingreadiator version submission by Chris Corrigan.</p>",
   "private": true,
   "scripts": {
     "build": "webpack --mode development",

@@ -1,4 +1,4 @@
-<h1>PayByPhone's Frontend Code Test</h1>
+<h1>Frontend code exercise/test</h1>
 <p>'Ingreadiator' version submission by Chris Corrigan.</p>
 
 <p>To install, first it requires an environment with Node and NPM. </p>
